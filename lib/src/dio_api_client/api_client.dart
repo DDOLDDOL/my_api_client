@@ -225,11 +225,11 @@ class ApiClient {
     options.headers ??= {'Content-Type': contentType};
     options.headers!['Content-Type'] ??= contentType;
 
-    log('authorization header: $authorizationHeader');
+    print('authorization header: ${authorizationHeader?.call()}');
 
     if (needAuth) {
       options.headers!.addAll({
-        'Authorization': authorizationHeader,
+        'Authorization': authorizationHeader?.call(),
       });
     }
 
